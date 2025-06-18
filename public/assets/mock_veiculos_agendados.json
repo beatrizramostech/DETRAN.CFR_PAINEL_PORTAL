@@ -1,0 +1,546 @@
+[
+  {
+    "id": 1,
+    "placa": "DEF1B01",
+    "emViagem": false,
+    "viagens": [
+      {
+        "id": 1001,
+        "dataChegada": "2025-06-18T11:00:00Z",
+        "dataPartida": "2025-06-18T09:00:00Z",
+        "horaChegada": "11:00",
+        "horaPartida": "09:00",
+        "localDestino": "CIRETRAN SERRA",
+        "municipioDestino": "Serra",
+        "status": "Concluída"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "placa": "GHI2C02",
+    "emViagem": true,
+    "viagens": [
+      {
+        "id": 1002,
+        "dataChegada": "2025-06-18T12:00:00Z",
+        "dataPartida": "2025-06-18T10:00:00Z",
+        "horaChegada": "12:00",
+        "horaPartida": "10:00",
+        "localDestino": "CIRETRAN CARIACICA",
+        "municipioDestino": "Cariacica",
+        "status": "Iniciada"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "placa": "JKL3D03",
+    "emViagem": true,
+    "viagens": [
+      {
+        "id": 1003,
+        "dataChegada": "2025-06-18T13:00:00Z",
+        "dataPartida": "2025-06-18T11:00:00Z",
+        "horaChegada": "13:00",
+        "horaPartida": "11:00",
+        "localDestino": "CIRETRAN GUARAPARI",
+        "municipioDestino": "Guarapari",
+        "status": "Agendada"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "placa": "MNO4E04",
+    "emViagem": true,
+    "viagens": [
+      {
+        "id": 1004,
+        "dataChegada": "2025-06-18T14:00:00Z",
+        "dataPartida": "2025-06-18T12:00:00Z",
+        "horaChegada": "14:00",
+        "horaPartida": "12:00",
+        "localDestino": "CIRETRAN VITORIA",
+        "municipioDestino": "Vitória",
+        "status": "Agendada"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "placa": "PQR5F05",
+    "emViagem": false,
+    "viagens": [
+      {
+        "id": 1005,
+        "dataChegada": "2025-06-18T10:00:00Z",
+        "dataPartida": "2025-06-18T08:00:00Z",
+        "horaChegada": "10:00",
+        "horaPartida": "08:00",
+        "localDestino": "CIRETRAN VILA VELHA",
+        "municipioDestino": "Vila Velha",
+        "status": "Em Andamento"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "placa": "STU6G06",
+    "emViagem": true,
+    "viagens": [
+      {
+        "id": 1006,
+        "dataChegada": "2025-06-18T11:00:00Z",
+        "dataPartida": "2025-06-18T09:00:00Z",
+        "horaChegada": "11:00",
+        "horaPartida": "09:00",
+        "localDestino": "CIRETRAN SERRA",
+        "municipioDestino": "Serra",
+        "status": "Concluída"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "placa": "VWX7H07",
+    "emViagem": false,
+    "viagens": [
+      {
+        "id": 1007,
+        "dataChegada": "2025-06-18T12:00:00Z",
+        "dataPartida": "2025-06-18T10:00:00Z",
+        "horaChegada": "12:00",
+        "horaPartida": "10:00",
+        "localDestino": "CIRETRAN CARIACICA",
+        "municipioDestino": "Cariacica",
+        "status": "Agendada"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "placa": "YZA8I08",
+    "emViagem": false,
+    "viagens": [
+      {
+        "id": 1008,
+        "dataChegada": "2025-06-18T13:00:00Z",
+        "dataPartida": "2025-06-18T11:00:00Z",
+        "horaChegada": "13:00",
+        "horaPartida": "11:00",
+        "localDestino": "CIRETRAN GUARAPARI",
+        "municipioDestino": "Guarapari",
+        "status": "Cancelada"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "placa": "ABC9J09",
+    "emViagem": false,
+    "viagens": [
+      {
+        "id": 1009,
+        "dataChegada": "2025-06-18T14:00:00Z",
+        "dataPartida": "2025-06-18T12:00:00Z",
+        "horaChegada": "14:00",
+        "horaPartida": "12:00",
+        "localDestino": "CIRETRAN VITORIA",
+        "municipioDestino": "Vitória",
+        "status": "Agendada"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "placa": "DEF0K10",
+    "emViagem": false,
+    "viagens": [
+      {
+        "id": 1010,
+        "dataChegada": "2025-06-18T10:00:00Z",
+        "dataPartida": "2025-06-18T08:00:00Z",
+        "horaChegada": "10:00",
+        "horaPartida": "08:00",
+        "localDestino": "CIRETRAN VILA VELHA",
+        "municipioDestino": "Vila Velha",
+        "status": "Cancelada"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "placa": "GHI1L11",
+    "emViagem": true,
+    "viagens": [
+      {
+        "id": 1011,
+        "dataChegada": "2025-06-18T11:00:00Z",
+        "dataPartida": "2025-06-18T09:00:00Z",
+        "horaChegada": "11:00",
+        "horaPartida": "09:00",
+        "localDestino": "CIRETRAN SERRA",
+        "municipioDestino": "Serra",
+        "status": "Agendada"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "placa": "JKL2M12",
+    "emViagem": false,
+    "viagens": [
+      {
+        "id": 1012,
+        "dataChegada": "2025-06-18T12:00:00Z",
+        "dataPartida": "2025-06-18T10:00:00Z",
+        "horaChegada": "12:00",
+        "horaPartida": "10:00",
+        "localDestino": "CIRETRAN CARIACICA",
+        "municipioDestino": "Cariacica",
+        "status": "Cancelada"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "placa": "MNO3N13",
+    "emViagem": false,
+    "viagens": [
+      {
+        "id": 1013,
+        "dataChegada": "2025-06-18T13:00:00Z",
+        "dataPartida": "2025-06-18T11:00:00Z",
+        "horaChegada": "13:00",
+        "horaPartida": "11:00",
+        "localDestino": "CIRETRAN GUARAPARI",
+        "municipioDestino": "Guarapari",
+        "status": "Cancelada"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "placa": "PQR4O14",
+    "emViagem": false,
+    "viagens": [
+      {
+        "id": 1014,
+        "dataChegada": "2025-06-18T14:00:00Z",
+        "dataPartida": "2025-06-18T12:00:00Z",
+        "horaChegada": "14:00",
+        "horaPartida": "12:00",
+        "localDestino": "CIRETRAN VITORIA",
+        "municipioDestino": "Vitória",
+        "status": "Agendada"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "placa": "STU5P15",
+    "emViagem": false,
+    "viagens": [
+      {
+        "id": 1015,
+        "dataChegada": "2025-06-18T10:00:00Z",
+        "dataPartida": "2025-06-18T08:00:00Z",
+        "horaChegada": "10:00",
+        "horaPartida": "08:00",
+        "localDestino": "CIRETRAN VILA VELHA",
+        "municipioDestino": "Vila Velha",
+        "status": "Agendada"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "placa": "VWX6Q16",
+    "emViagem": true,
+    "viagens": [
+      {
+        "id": 1016,
+        "dataChegada": "2025-06-18T11:00:00Z",
+        "dataPartida": "2025-06-18T09:00:00Z",
+        "horaChegada": "11:00",
+        "horaPartida": "09:00",
+        "localDestino": "CIRETRAN SERRA",
+        "municipioDestino": "Serra",
+        "status": "Cancelada"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "placa": "YZA7R17",
+    "emViagem": true,
+    "viagens": [
+      {
+        "id": 1017,
+        "dataChegada": "2025-06-18T12:00:00Z",
+        "dataPartida": "2025-06-18T10:00:00Z",
+        "horaChegada": "12:00",
+        "horaPartida": "10:00",
+        "localDestino": "CIRETRAN CARIACICA",
+        "municipioDestino": "Cariacica",
+        "status": "Concluída"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "placa": "ABC8S18",
+    "emViagem": false,
+    "viagens": [
+      {
+        "id": 1018,
+        "dataChegada": "2025-06-18T13:00:00Z",
+        "dataPartida": "2025-06-18T11:00:00Z",
+        "horaChegada": "13:00",
+        "horaPartida": "11:00",
+        "localDestino": "CIRETRAN GUARAPARI",
+        "municipioDestino": "Guarapari",
+        "status": "Cancelada"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "placa": "DEF9T19",
+    "emViagem": false,
+    "viagens": [
+      {
+        "id": 1019,
+        "dataChegada": "2025-06-18T14:00:00Z",
+        "dataPartida": "2025-06-18T12:00:00Z",
+        "horaChegada": "14:00",
+        "horaPartida": "12:00",
+        "localDestino": "CIRETRAN VITORIA",
+        "municipioDestino": "Vitória",
+        "status": "Cancelada"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "placa": "GHI0U20",
+    "emViagem": false,
+    "viagens": [
+      {
+        "id": 1020,
+        "dataChegada": "2025-06-18T10:00:00Z",
+        "dataPartida": "2025-06-18T08:00:00Z",
+        "horaChegada": "10:00",
+        "horaPartida": "08:00",
+        "localDestino": "CIRETRAN VILA VELHA",
+        "municipioDestino": "Vila Velha",
+        "status": "Concluída"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "placa": "JKL1V21",
+    "emViagem": true,
+    "viagens": [
+      {
+        "id": 1021,
+        "dataChegada": "2025-06-18T11:00:00Z",
+        "dataPartida": "2025-06-18T09:00:00Z",
+        "horaChegada": "11:00",
+        "horaPartida": "09:00",
+        "localDestino": "CIRETRAN SERRA",
+        "municipioDestino": "Serra",
+        "status": "Em Andamento"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "placa": "MNO2W22",
+    "emViagem": true,
+    "viagens": [
+      {
+        "id": 1022,
+        "dataChegada": "2025-06-18T12:00:00Z",
+        "dataPartida": "2025-06-18T10:00:00Z",
+        "horaChegada": "12:00",
+        "horaPartida": "10:00",
+        "localDestino": "CIRETRAN CARIACICA",
+        "municipioDestino": "Cariacica",
+        "status": "Concluída"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "placa": "PQR3X23",
+    "emViagem": true,
+    "viagens": [
+      {
+        "id": 1023,
+        "dataChegada": "2025-06-18T13:00:00Z",
+        "dataPartida": "2025-06-18T11:00:00Z",
+        "horaChegada": "13:00",
+        "horaPartida": "11:00",
+        "localDestino": "CIRETRAN GUARAPARI",
+        "municipioDestino": "Guarapari",
+        "status": "Agendada"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "placa": "STU4Y24",
+    "emViagem": true,
+    "viagens": [
+      {
+        "id": 1024,
+        "dataChegada": "2025-06-18T14:00:00Z",
+        "dataPartida": "2025-06-18T12:00:00Z",
+        "horaChegada": "14:00",
+        "horaPartida": "12:00",
+        "localDestino": "CIRETRAN VITORIA",
+        "municipioDestino": "Vitória",
+        "status": "Agendada"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "placa": "VWX5Z25",
+    "emViagem": false,
+    "viagens": [
+      {
+        "id": 1025,
+        "dataChegada": "2025-06-18T10:00:00Z",
+        "dataPartida": "2025-06-18T08:00:00Z",
+        "horaChegada": "15:00",
+        "horaPartida": "17:00",
+        "localDestino": "CIRETRAN VILA VELHA",
+        "municipioDestino": "Vila Velha",
+        "status": "Confirmada"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "placa": "YZA6A26",
+    "emViagem": false,
+    "viagens": [
+      {
+        "id": 1026,
+        "dataChegada": "2025-06-18T11:00:00Z",
+        "dataPartida": "2025-06-18T09:00:00Z",
+        "horaChegada": "11:00",
+        "horaPartida": "09:00",
+        "localDestino": "CIRETRAN SERRA",
+        "municipioDestino": "Serra",
+        "status": "Cancelada"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "placa": "VWX5Z25",
+    "emViagem": false,
+    "viagens": [
+      {
+        "id": 1025,
+        "dataPartida": "2025-06-18T10:00:00Z",
+        "dataChegada": "2025-06-18T12:00:00Z",
+        "horaPartida": "18:00",
+        "horaChegada": "19:00",
+        "localDestino": "CIRETRAN VILA VELHA",
+        "municipioDestino": "Vila Velha",
+        "status": "Confirmada"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "placa": "YZA6A26",
+    "emViagem": false,
+    "viagens": [
+      {
+        "id": 1026,
+        "dataPartida": "2025-06-18T11:00:00Z",
+        "dataChegada": "2025-06-18T13:00:00Z",
+        "horaPartida": "11:00",
+        "horaChegada": "13:00",
+        "localDestino": "CIRETRAN SERRA",
+        "municipioDestino": "Serra",
+        "status": "Confirmada"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "placa": "ABC7B27",
+    "emViagem": false,
+    "viagens": [
+      {
+        "id": 1027,
+        "dataPartida": "2025-06-18T12:00:00Z",
+        "dataChegada": "2025-06-18T14:00:00Z",
+        "horaPartida": "19:00",
+        "horaChegada": "20:00",
+        "localDestino": "CIRETRAN CARIACICA",
+        "municipioDestino": "Cariacica",
+        "status": "Confirmada"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "placa": "DEF8C28",
+    "emViagem": false,
+    "viagens": [
+      {
+        "id": 1028,
+        "dataPartida": "2025-06-18T13:00:00Z",
+        "dataChegada": "2025-06-18T15:00:00Z",
+        "horaPartida": "13:00",
+        "horaChegada": "15:00",
+        "localDestino": "CIRETRAN GUARAPARI",
+        "municipioDestino": "Guarapari",
+        "status": "Confirmada"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "placa": "GHI9D29",
+    "emViagem": false,
+    "viagens": [
+      {
+        "id": 1029,
+        "dataPartida": "2025-06-18T14:00:00Z",
+        "dataChegada": "2025-06-18T16:00:00Z",
+        "horaPartida": "16:00",
+        "horaChegada": "18:00",
+        "localDestino": "CIRETRAN VITORIA",
+        "municipioDestino": "Vitória",
+        "status": "Confirmada"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "placa": "JKL0E30",
+    "emViagem": false,
+    "viagens": [
+      {
+        "id": 1030,
+        "dataPartida": "2025-06-18T15:00:00Z",
+        "dataChegada": "2025-06-18T17:00:00Z",
+        "horaPartida": "15:00",
+        "horaChegada": "17:00",
+        "localDestino": "CIRETRAN VILA VELHA",
+        "municipioDestino": "Vila Velha",
+        "status": "Confirmada"
+      }
+    ]
+  }
+]

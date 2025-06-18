@@ -54,8 +54,8 @@
 }
 
 .disponivel-card {
-  width: 130px;
-  height: 60px;
+  width: 270px;
+  height: 80px;
   border: 1px solid #444;
   border-radius: 4px;
   overflow: hidden;
@@ -69,7 +69,7 @@
   background-color: #003087;
   color: white;
   padding: 4px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   text-align: center;
   text-transform: capitalize;
@@ -77,8 +77,21 @@
 
 .disponivel-body {
   background-color: white;
+  display: flex;
   padding: 4px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.disponivel-footer {
+  background-color: #ccc;
+  padding: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: capitalize;
 }

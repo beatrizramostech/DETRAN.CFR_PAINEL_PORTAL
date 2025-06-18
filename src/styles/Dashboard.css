@@ -1,17 +1,26 @@
 .dashboard {
-  padding: 20px;
   font-family: sans-serif;
 }
 
-h2 {
-  margin-top: 30px;
-  margin-bottom: 10px;
+.dashboard .conteudo {
+  padding: 12px 32px;
 }
-
 .grid {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
 }
 
+.title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
 
+.title > button {
+  font-size: 16px;
+  font-weight: bold;
+  background-color: rgb(0, 224, 101);
+  padding: 12px;
+  border-radius: 8px;
+}

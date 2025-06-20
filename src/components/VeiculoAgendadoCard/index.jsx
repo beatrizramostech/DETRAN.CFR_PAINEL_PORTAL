@@ -1,9 +1,39 @@
+import { useState } from 'react';
 import '../../styles/Veiculos.css';
 
-const VeiculoAgendadoCard = ({ veiculo }) => {
-  const viagem = veiculo.viagens[0];
+const getViagemMaisProxima = (viagens, agora = new Date()) => {
+  const viagensValidas = viagens.filter((v) => {
+    const status = v.status.toLowerCase();
+    return status !== 'cancelada' && status !== 'concluída';
+  });
 
+  const viagemIniciada = viagensValidas.find(
+    (v) => v.status.toLowerCase() === 'iniciada'
+  );
+  if (viagemIniciada) return viagemIniciada;
+
+  const viagensFuturasConfirmadas = viagensValidas
+    .filter((v) => v.status.toLowerCase() === 'confirmada')
+    .map((v) => ({
+      ...v,
+      dataHoraPartida: new Date(
+        `${v.dataPartida.split('T')[0]}T${v.horaPartida}`
+      ),
+    }))
+    .filter((v) => v.dataHoraPartida > agora);
+  console.log('Viagens futuras', viagensFuturasConfirmadas);
+  if (viagensFuturasConfirmadas.length === 0) return null;
+
+  return viagensFuturasConfirmadas.reduce((maisProxima, atual) =>
+    atual.dataHoraPartida < maisProxima.dataHoraPartida ? atual : maisProxima
+  );
+};
+
+const VeiculoAgendadoCard = ({ veiculo }) => {
   const now = new Date();
+  const [viagem, setViagem] = useState(getViagemMaisProxima(veiculo.viagens));
+  if (!viagem) return;
+
   const dataPartidaString = `${viagem.dataPartida.split('T')[0]}T${
     viagem.horaPartida
   }`;

@@ -1,6 +1,6 @@
 .container-disponiveis {
-  height: 81vh;
-  padding: 12px;
+  height: 79vh;
+  padding: 10px;
   border: 1px solid black;
   border-radius: 8px;
   background-color: white;
@@ -12,13 +12,13 @@
   gap: 16px;
   align-items: center;
   justify-content: space-around;
-  padding: 0 0 12px 0;
+  padding: 0 0 10px 0;
 }
 .painel-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   grid-auto-rows: minmax(95px, auto);
-  gap: 12px;
+  gap: 6px;
   align-items: center;
   justify-items: center;
 }
@@ -32,7 +32,7 @@
 }
 .painel-grid-agendados {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-auto-rows: minmax(240px, auto);
   gap: 12px;
   align-items: center;

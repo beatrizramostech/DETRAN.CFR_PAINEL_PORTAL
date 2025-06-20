@@ -9,6 +9,10 @@ export const VeiculosDisponiveisPainel = () => {
   const { setUltimaAtualizacao } = useVeiculoContext();
   const [todosVeiculos, setTodosVeiculos] = useState([]);
   const [veiculosVisiveis, setVeiculosVisiveis] = useState([]);
+  const [tamanhoTela, setTamanhoTela] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
   const [filtro, setFiltro] = useState({
     placa: '',
     modelo: '',
@@ -39,9 +43,23 @@ export const VeiculosDisponiveisPainel = () => {
           .toLowerCase()
           .includes((filtro.tipoVeiculo ?? '').toLowerCase())
     );
-
     return resultado;
   };
+
+  useEffect(() => {
+    const atualizarTamanho = () => {
+      setTamanhoTela({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener('resize', atualizarTamanho);
+
+    return () => {
+      window.removeEventListener('resize', atualizarTamanho);
+    };
+  }, []);
 
   useEffect(() => {
     const carregarVeiculos = async () => {
@@ -62,31 +80,37 @@ export const VeiculosDisponiveisPainel = () => {
 
   useEffect(() => {
     const todosFiltrados = aplicarFiltro();
+    const alturaUtil = tamanhoTela.height - 180;
+    const larguraUtil = tamanhoTela.width - 80;
 
-    setVeiculosVisiveis(todosFiltrados.slice(0, 25));
-    indiceAtualRef.current = 25;
+    const linhas = Math.max(Math.trunc(alturaUtil / 100), 1);
+    const colunas = Math.max(Math.trunc(larguraUtil / 270), 1);
+    const numeroCards = linhas * colunas;
+
+    setVeiculosVisiveis(todosFiltrados.slice(0, numeroCards));
+    indiceAtualRef.current = numeroCards;
 
     const intervalo = setInterval(() => {
       const novos = todosFiltrados.slice(
         indiceAtualRef.current,
-        indiceAtualRef.current + 25
+        indiceAtualRef.current + numeroCards
       );
       setVeiculosVisiveis(novos);
 
-      if (indiceAtualRef.current + 25 >= todosFiltrados.length) {
+      if (indiceAtualRef.current + numeroCards >= todosFiltrados.length) {
         indiceAtualRef.current = 0;
       } else {
-        indiceAtualRef.current += 25;
+        indiceAtualRef.current += numeroCards;
       }
     }, 5000);
 
     return () => clearInterval(intervalo);
-  }, [filtro, todosVeiculos]);
+  }, [filtro, todosVeiculos, tamanhoTela]);
 
   return (
     <div className="container-disponiveis">
       <form className="painel-filtro">
-        {['placa', 'modelo', 'marca', 'unidade', 'tipoVeiculo'].map((campo) => (
+        {['placa', 'modelo', 'marca', 'unidade'].map((campo) => (
           <input
             key={campo}
             className="input-filtro"
@@ -95,6 +119,24 @@ export const VeiculosDisponiveisPainel = () => {
             onChange={(e) => setFiltro({ ...filtro, [campo]: e.target.value })}
           />
         ))}
+        <select
+          name="tipoVeiculo"
+          id="tipoVeiculo"
+          className="input-filtro"
+          onChange={(e) =>
+            setFiltro({ ...filtro, tipoVeiculo: e.target.value })
+          }
+        >
+          <option value="">TIPO DE VEICULO</option>
+          <option value="CAMINHÃO">CAMINHÃO</option>
+          <option value="CAMINHONETE">CAMINHONETE</option>
+          <option value="CARRO">CARRO</option>
+          <option value="FURGÃO">FURGÃO</option>
+          <option value="MICROÔNIBUS">MICROÔNIBUS</option>
+          <option value="ÔNIBUS">ÔNIBUS</option>
+          <option value="PICKUP">PICKUP</option>
+          <option value="VAN">VAN</option>
+        </select>
       </form>
       <div className="painel-grid">
         {veiculosVisiveis.map((veiculo) => (

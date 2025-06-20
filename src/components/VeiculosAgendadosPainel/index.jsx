@@ -8,8 +8,27 @@ export const VeiculosAgendadosPainel = () => {
   const { setUltimaAtualizacao } = useVeiculoContext();
   const [todosVeiculos, setTodosVeiculos] = useState([]);
   const [veiculosVisiveis, setVeiculosVisiveis] = useState([]);
+  const [tamanhoTela, setTamanhoTela] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
 
   const indiceAtualRef = useRef(0);
+
+  useEffect(() => {
+    const atualizarTamanho = () => {
+      setTamanhoTela({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener('resize', atualizarTamanho);
+
+    return () => {
+      window.removeEventListener('resize', atualizarTamanho);
+    };
+  }, []);
 
   useEffect(() => {
     const carregarVeiculos = async () => {
@@ -18,7 +37,9 @@ export const VeiculosAgendadosPainel = () => {
           '/homo/cfr-painel/assets/mock_veiculos_agendados.json'
         );
         const veiculos = await res.json();
+
         setTodosVeiculos(veiculos);
+
         setVeiculosVisiveis(veiculos.slice(0, 12));
         indiceAtualRef.current = 12;
         setUltimaAtualizacao(formatarData(new Date()));
@@ -31,25 +52,37 @@ export const VeiculosAgendadosPainel = () => {
   }, []);
 
   useEffect(() => {
-    setVeiculosVisiveis(todosVeiculos.slice(0, 12));
-    indiceAtualRef.current = 12;
+    if (todosVeiculos.length === 0) return;
+
+    const alturaUtil = tamanhoTela.height - 130;
+    const larguraUtil = tamanhoTela.width - 80;
+
+    const linhas = Math.max(Math.trunc(alturaUtil / 260), 1);
+    const colunas = Math.max(Math.trunc(larguraUtil / 220), 1);
+    const numeroCards = linhas * colunas;
+    setVeiculosVisiveis(todosVeiculos.slice(0, numeroCards));
+    indiceAtualRef.current = numeroCards;
 
     const intervalo = setInterval(() => {
       const novos = todosVeiculos.slice(
         indiceAtualRef.current,
-        indiceAtualRef.current + 12
+        indiceAtualRef.current + numeroCards
       );
-      setVeiculosVisiveis(novos);
 
-      if (indiceAtualRef.current + 12 >= todosVeiculos.length) {
+      setVeiculosVisiveis(
+        novos.length > 0 ? novos : todosVeiculos.slice(0, numeroCards)
+      );
+
+      if (indiceAtualRef.current + numeroCards >= todosVeiculos.length) {
         indiceAtualRef.current = 0;
       } else {
-        indiceAtualRef.current += 12;
+        indiceAtualRef.current += numeroCards;
       }
     }, 10000);
 
     return () => clearInterval(intervalo);
-  }, [todosVeiculos]);
+  }, [todosVeiculos, tamanhoTela]);
+
   return (
     <div className="container-disponiveis">
       <div className="painel-grid-agendados">

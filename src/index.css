@@ -1,15 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 :root {
-  --azul-1: rgb(80, 129, 160);
-  --azul-2: rgb(54, 108, 136);
-  --azul-3: rgb(54, 90, 109);
-  --marsala-1: rgb(177, 108, 105);
-  --marsala-2: rgb(156, 92, 106);
-  --marsala-3: rgb(123, 74, 85);
-  --cinza-1: rgb(207, 207, 207);
-  --cinza-2: rgb(123, 123, 122);
-  --cinza-3: rgb(88, 88, 87);
+  --azul-placa: #0000ff;
+  --branco-placa: #fff;
+  --cinza-placa: #ccc;
+  --amarelo: #fcd754;
+  --amarelo-bg: #ffd943;
+  --verde: #8be4a1;
+  --verde-bg: #00b333;
+  --verde-button: rgb(117, 68, 252);
+  --vermelho: #f79191;
+  --vermelho-bg: #ff1d1d;
+  --bg-color: #fff;
+  --text-color: ##000;
+  --border-color: #4d4d4d;
+  --bg-input: #fff;
 }
+
+[data-theme='dark'] {
+  --bg-color: #1a1a1a;
+  --text-color: #d6d2d2;
+  --bg-input: #585858;
+  --cinza-placa: #615f5f;
+  --branco-placa: #a7a3a3;
+  --verde: #05641d;
+  --verde-bg: #00ff48;
+  --vermelho: #911d1d;
+  --vermelho-bg: #c20b0b;
+  --amarelo: #8d7007;
+  --amarelo-bg: #cca60d;
+  --verde-button: rgb(55, 29, 126);
+}
+
 html,
 body,
 #root {
@@ -19,7 +40,9 @@ body,
   height: 100%;
   overflow-x: hidden;
   font-family: 'Open Sans', sans-serif;
-  background-color: rgb(207, 207, 207, 0.1);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 h2 {

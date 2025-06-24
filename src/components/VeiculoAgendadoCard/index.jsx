@@ -11,20 +11,9 @@ const getViagemMaisProxima = (viagens, agora = new Date()) => {
     (v) => v.status.toLowerCase() === 'iniciada'
   );
   if (viagemIniciada) return viagemIniciada;
+  if (viagensValidas.length === 0) return null;
 
-  const viagensFuturasConfirmadas = viagensValidas
-    .filter((v) => v.status.toLowerCase() === 'confirmada')
-    .map((v) => ({
-      ...v,
-      dataHoraPartida: new Date(
-        `${v.dataPartida.split('T')[0]}T${v.horaPartida}`
-      ),
-    }))
-    .filter((v) => v.dataHoraPartida > agora);
-  console.log('Viagens futuras', viagensFuturasConfirmadas);
-  if (viagensFuturasConfirmadas.length === 0) return null;
-
-  return viagensFuturasConfirmadas.reduce((maisProxima, atual) =>
+  return viagensValidas.reduce((maisProxima, atual) =>
     atual.dataHoraPartida < maisProxima.dataHoraPartida ? atual : maisProxima
   );
 };
@@ -65,6 +54,7 @@ const VeiculoAgendadoCard = ({ veiculo }) => {
           <p>
             {viagem.horaPartida} - {viagem.horaChegada}
           </p>
+          <p className="motorista">{viagem.motorista}</p>
           <p>{viagem.localDestino}</p>
           <p>{viagem.municipioDestino}</p>
         </>

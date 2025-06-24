@@ -6,7 +6,7 @@ import { useVeiculoContext } from '../../contexts/VeiculosContext';
 import { formatarData } from '../../utils/utils';
 
 export const VeiculosDisponiveisPainel = () => {
-  const { setUltimaAtualizacao } = useVeiculoContext();
+  const { setUltimaAtualizacao, timer } = useVeiculoContext();
   const [todosVeiculos, setTodosVeiculos] = useState([]);
   const [veiculosVisiveis, setVeiculosVisiveis] = useState([]);
   const [tamanhoTela, setTamanhoTela] = useState({
@@ -76,7 +76,13 @@ export const VeiculosDisponiveisPainel = () => {
     };
 
     carregarVeiculos();
-  }, []);
+
+    const intervalo = setInterval(() => {
+      carregarVeiculos();
+    }, timer * 5);
+
+    return () => clearInterval(intervalo);
+  }, [timer]);
 
   useEffect(() => {
     const todosFiltrados = aplicarFiltro();
@@ -102,10 +108,10 @@ export const VeiculosDisponiveisPainel = () => {
       } else {
         indiceAtualRef.current += numeroCards;
       }
-    }, 5000);
+    }, timer);
 
     return () => clearInterval(intervalo);
-  }, [filtro, todosVeiculos, tamanhoTela]);
+  }, [filtro, todosVeiculos, tamanhoTela, timer]);
 
   return (
     <div className="container-disponiveis">

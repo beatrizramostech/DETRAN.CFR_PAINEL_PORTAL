@@ -17,7 +17,7 @@ const Dashboard = () => {
           <section>
             <div className="title">
               <h2>Veículos Disponíveis</h2>
-              {totalVeiculosAgendados.length != 0 && (
+              {totalVeiculosAgendados != 0 && (
                 <button onClick={() => setMudaTela(true)}>
                   Ver Veiculos agendados
                 </button>

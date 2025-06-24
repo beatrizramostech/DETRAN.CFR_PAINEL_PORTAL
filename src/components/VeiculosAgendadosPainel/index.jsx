@@ -3,9 +3,10 @@ import '../../styles/VeiculosDisponiveisPainel.css';
 import VeiculoAgendadoCard from '../VeiculoAgendadoCard';
 import { useVeiculoContext } from '../../contexts/VeiculosContext';
 import { formatarData } from '../../utils/utils';
+import { getVeiculosAgendados } from '../../services/api';
 
 export const VeiculosAgendadosPainel = () => {
-  const { setUltimaAtualizacao } = useVeiculoContext();
+  const { setUltimaAtualizacao, timer } = useVeiculoContext();
   const [todosVeiculos, setTodosVeiculos] = useState([]);
   const [veiculosVisiveis, setVeiculosVisiveis] = useState([]);
   const [tamanhoTela, setTamanhoTela] = useState({
@@ -33,13 +34,17 @@ export const VeiculosAgendadosPainel = () => {
   useEffect(() => {
     const carregarVeiculos = async () => {
       try {
+        // const res = await getVeiculosAgendados();
+        // const veiculos = res.data;
         const res = await fetch(
-          '/homo/cfr-painel/assets/mock_veiculos_agendados.json'
+          `/homo/cfr-painel/assets/mock_veiculos_agendados.json`
         );
+        // const veiculosAgendados = resAgendados.data ?? [];
+        if (!res.ok)
+          throw new Error('Erro ao carregar mock_veiculos_agendados.json');
+
         const veiculos = await res.json();
-
         setTodosVeiculos(veiculos);
-
         setVeiculosVisiveis(veiculos.slice(0, 12));
         indiceAtualRef.current = 12;
         setUltimaAtualizacao(formatarData(new Date()));
@@ -49,6 +54,12 @@ export const VeiculosAgendadosPainel = () => {
     };
 
     carregarVeiculos();
+
+    const intervalo = setInterval(() => {
+      carregarVeiculos();
+    }, timer * 5);
+
+    return () => clearInterval(intervalo);
   }, []);
 
   useEffect(() => {
@@ -78,11 +89,11 @@ export const VeiculosAgendadosPainel = () => {
       } else {
         indiceAtualRef.current += numeroCards;
       }
-    }, 10000);
+    }, timer);
 
     return () => clearInterval(intervalo);
   }, [todosVeiculos, tamanhoTela]);
-
+  console.log(todosVeiculos);
   return (
     <div className="container-disponiveis">
       <div className="painel-grid-agendados">

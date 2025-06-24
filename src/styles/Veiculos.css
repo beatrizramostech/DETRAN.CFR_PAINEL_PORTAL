@@ -2,7 +2,7 @@
   border-radius: 8px;
   padding: 12px;
   width: 150px;
-  font-size: 12px;
+  font-size: 0.875rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,28 +13,28 @@
 }
 
 .card-verde {
-  background-color: #afffc3;
-  border: 1px solid #06f84b;
+  background-color: var(--verde);
+  border: 1px solid var(--verde-bg);
 }
 
 .card-amarelo {
-  background-color: #fdedb1;
-  border: 1px solid #ffd943;
+  background-color: var(--amarelo);
+  border: 1px solid var(--amarelo-bg);
 }
 
 .card-vermelho {
-  background-color: #fdc3c3;
-  border: 1px solid #ff1d1d;
+  background-color: var(--vermelho);
+  border: 1px solid var(--vermelho-bg);
 }
 
 .card-agendado h4 {
   margin: 6px 0;
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: bold;
 }
 .placa {
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 
 .card {
@@ -53,10 +53,15 @@
   background-color: #f9f9f9;
 }
 
+.motorista {
+  font-size: 0.875rem;
+}
+
 .disponivel-card {
   width: 270px;
   height: 80px;
   border: 1px solid #444;
+  color: #000;
   border-radius: 4px;
   overflow: hidden;
   font-family: sans-serif;
@@ -69,17 +74,17 @@
   background-color: #003087;
   color: white;
   padding: 4px;
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: bold;
   text-align: center;
   text-transform: capitalize;
 }
 
 .disponivel-body {
-  background-color: white;
+  background-color: var(--branco-placa);
   display: flex;
   padding: 4px;
-  font-size: 16px;
+  font-size: 1.1rem;
   font-weight: bold;
   text-align: center;
   align-items: center;
@@ -88,10 +93,15 @@
 }
 
 .disponivel-footer {
-  background-color: #ccc;
+  background-color: var(--cinza-placa);
   padding: 4px;
-  font-size: 12px;
+  font-size: 0.875rem;
   font-weight: bold;
   text-align: center;
   text-transform: capitalize;
+}
+
+p {
+  margin: 0.5rem;
+  font-size: 0.85rem;
 }

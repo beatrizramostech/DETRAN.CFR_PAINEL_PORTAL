@@ -2,19 +2,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #e9f1fb;
+  background-color: var(--bg-color);
   padding: 10px 20px;
-  border-bottom: 2px solid #d1d1d1;
-  font-size: 1.5rem;
+  border-bottom: 2px solid var(--border-color);
+  font-size: 1.6rem;
   font-family: sans-serif;
   margin: 0;
+  color: var(--text-color);
 }
 
 .painel-info {
   display: flex;
   gap: 30px;
   font-weight: bold;
-  color: #222;
+  color: var(--text-color);
 }
 
 .painel-info span strong {
@@ -22,6 +23,16 @@
 }
 
 .painel-atualizacao {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #555;
+}
+.button-theme {
+  background: none;
+  margin: none;
+  border: none;
+  color: var(--text-color);
+}
+.vazio {
+  display: flex;
+  gap: 1rem;
 }

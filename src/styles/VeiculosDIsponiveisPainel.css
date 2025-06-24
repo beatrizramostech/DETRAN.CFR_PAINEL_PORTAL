@@ -3,7 +3,7 @@
   padding: 10px;
   border: 1px solid black;
   border-radius: 8px;
-  background-color: white;
+  background-color: var(--bg-color);
 }
 
 .painel-filtro {
@@ -25,10 +25,12 @@
 .input-filtro {
   height: 30px;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 1.1rem;
   width: 100%;
   padding: 2px 8px;
   max-width: 270px;
+  background-color: var(--bg-input);
+  color: var(--text-color);
 }
 .painel-grid-agendados {
   display: grid;
